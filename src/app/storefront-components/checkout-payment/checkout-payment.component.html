@@ -1,0 +1,25 @@
+<mat-card class="container">
+  <h3>Payment Info</h3>
+    <div>
+      <mat-input-container>
+        <input matInput placeholder="Credit Card Number" [(ngModel)]="newCreditCard.number">
+      </mat-input-container>
+    </div>
+    <div>
+      <mat-input-container>
+        <input matInput placeholder="CCV" [(ngModel)]="newCreditCard.cvc">
+      </mat-input-container>
+    </div>
+    <div>
+      <mat-input-container>
+        <input matInput placeholder="Month" [(ngModel)]="newCreditCard.exp_month" size="4">
+      </mat-input-container>
+      /
+      <mat-input-container>
+        <input matInput placeholder="Year" [(ngModel)]="newCreditCard.exp_year" size="6">
+      </mat-input-container>
+    </div>
+
+  <button md-raised-button (click)="submitNewCreditCard()">Continue</button>
+  <div class="error" *ngIf="newCreditCard.error">{{ newCreditCard.error }}</div>
+</mat-card>
